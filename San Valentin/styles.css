@@ -1,0 +1,255 @@
+/* 🎨 Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    background: #d2a8b2;
+    color: rgb(55, 47, 47);  /* Asegura que el texto sea visible sobre el fondo */
+}
+
+/* 📌 Contenedor central */
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  /* Alinea el texto y el botón verticalmente */
+}
+/* 💖 Botón con forma de corazón */
+.heart-btn {
+    background: #ff4d6d;
+    color: white;
+    padding: 0; /* No hay necesidad de padding, lo manejamos con el tamaño */
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    line-height: 0;  /* Hace que el texto no se desborde */
+    width: 200px;  /* Tamaño ajustado del corazón */
+    height: 200px;  /* Tamaño ajustado del corazón */
+    clip-path: polygon(50% 100%, 0% 65%, 0% 0%, 50% 25%, 100% 0%, 110% 60%);  /* Forma de corazón invertida */
+    transition: transform 0.3s ease-in-out, background 0.3s;
+    font-weight: bold;
+    display: flex;
+    align-items: center;  /* Centra el texto verticalmente */
+    justify-content: center;  /* Centra el texto horizontalmente */
+    text-transform: uppercase;  /* Convierte el texto en mayúsculas */
+}
+
+.heart-btn:hover {
+    background: #e63950;
+    transform: scale(1.1);
+}
+
+
+
+
+/* 🔴 Corazones flotantes */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* ❤️ Estilo de los corazones */
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 30px;
+    opacity: 0.8;
+    animation: floatHearts linear infinite;
+}
+
+/* 🏹 Animación de corazones */
+@keyframes floatHearts {
+    0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
+/* 💬 Estilo para las palabras */
+.word {
+    position: absolute;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0.8;
+    animation: floatWords linear infinite;
+}
+
+/* 🏹 Animación de las palabras flotando */
+@keyframes floatWords {
+    0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
+
+/* 💖 Botón con efecto */
+button {
+    background: #ff4d6d;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+button:hover {
+    background: #e63950;
+    transform: scale(1.1);
+}
+
+/* ✉️ Sobre */
+#envelope {
+    position: relative;
+    width: 220px;
+    height: 160px;
+    cursor: pointer;
+    background: #ff758c;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Asegura que el sobre esté por encima del fondo */
+}
+
+/* 🔺 Tapa del sobre */
+.top {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff4d6d;
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: top;
+    z-index: 3; /* Asegura que la tapa esté por encima del sobre */
+}
+
+/* 🔺 Líneas negras simulando los bordes del triángulo */
+.top::before,
+.top::after {
+    content: "";
+    position: absolute;
+    width: 62%;
+    height: 2px;
+    background: black;
+    top: 0;
+    z-index: 4;
+}
+
+.top::before {
+    left: 0;
+    transform: rotate(35deg);
+    transform-origin: left;
+}
+
+.top::after {
+    right: 0;
+    transform: rotate(-35deg);
+    transform-origin: right;
+}
+
+/* 🔻 Cuerpo del sobre */
+.bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff758c;
+    z-index: 1;
+}
+
+/* 📜 Carta */
+#letter {
+    width: 800px;  /* Aumenta el ancho de la carta */
+    height: auto;
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid black;
+    transition: transform 0.8s ease-in-out;
+    z-index: 4; /* La carta debe estar por encima del sobre */
+    display: none;
+    text-align: left; /* Asegura que el contenido de la carta esté centrado */
+}
+
+
+@keyframes sway {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+/* 📌 Contenedor de botones alineados horizontalmente */
+.button-container {
+    display: flex;  
+    justify-content: center;
+    gap: 15px; /* Espacio entre los botones */
+    margin-top: 10px;
+}
+
+/* 📌 Botón "Sí" que crece cuando se presiona "No" */
+#yesBtn {
+    transition: transform 0.3s ease-in-out;
+}
+/* Contenedor para los GIFs */
+.gif-container {
+    display: flex;
+    justify-content: center;  /* Centra los GIFs */
+    gap: 20px;  /* Espacio entre los GIFs */
+}
+
+/* Estilo para las imágenes de los GIFs */
+.celebration-img {
+    width: 400px;  /* Ajusta el tamaño según necesites */
+    height: auto;  /* Mantiene la proporción del GIF */
+}
+/* 📌 Contenedor central */
+.container3 {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  /* Alinea el texto y los botones verticalmente */
+    background: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOG8xcXZjbnFyamt2cWVucDV3eGZrbDExNTR3MjZ1cWlhcmY2a2NqMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o752k5H19mo1pnpkc/giphy.gif') no-repeat center center fixed;
+    background-size: 207vh;  /* Asegura que la imagen se ajuste al contenedor sin recortarse */
+    background-position: center center;  /* Centra la imagen en el contenedor */
+    color: rgb(240, 104, 104);  /* Asegura que el texto sea visible sobre el fondo */
+}
+.gif-container img {
+    opacity: 0.6; /* Ajusta este valor entre 0 y 1 según el nivel de opacidad que desees */
+    transition: opacity 0.3s ease-in-out; /* Para que la opacidad cambie suavemente si lo deseas */
+}
+
+/* 🌸 Flor centrada */
+.flower {
+    font-size: 50px;
+    display: flex;  /* Establece el contenedor como flex */
+    justify-content: center;  /* Centra el contenido horizontalmente */
+    align-items: center;  /* Centra el contenido verticalmente */
+    margin: 10px auto; /* Centra la flor y agrega espacio */
+    animation: sway 2s infinite alternate ease-in-out;
+}
+
+/* Ajuste para la imagen de la flor */
+.flower-img {
+    width: 150px;  /* Ajusta el tamaño según necesites */
+    height: auto;  /* Mantiene la proporción del GIF */
+}

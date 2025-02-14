@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fondo de corazones -->
+    <div class="hearts-container"></div>
+
+    <!-- Contenedor del sobre -->
+    <div class="container">
+        <div id="envelope" onclick="openEnvelope()">
+            <div class="top"></div>  <!-- Tapa del sobre -->
+            <div class="bottom"></div> <!-- Cuerpo del sobre -->
+
+            <!-- 📜 Carta -->
+            <div id="letter">
+                <h3>Para Mi Solecito:</h3>
+                <p>❤️ Corazón, no hay palabras suficientes para describir lo agradecido que estoy de tenerte en mi vida. Eres la niña más bonita, tanto por fuera como por dentro, y me haces sentir afortunado cada día. Gracias por todo lo que haces por mí, por tu apoyo incondicional y por siempre estar a mi lado, incluso en los momentos más difíciles. 🌸</p>
+                <p>Eres una persona increíble, llena de bondad, amor y alegría. Me encanta pasar tiempo contigo, me haces reír, me haces sentir especial y, lo más importante, me haces sentir que todo es mejor cuando estamos juntos. 😊</p>
+                <p>Sé que a veces te molesto y te hago enojar, y aunque me encantaría ser perfecto para ti, a veces me resulta difícil. Pero créeme, me importas muchísimo y te quiero más de lo que las palabras pueden expresar. 🥺💕</p>
+                <p>Este día tan especial, quiero aprovechar para estar a tu lado y agradecerte por todo. Mi mayor deseo es que podamos compartir este hermoso día juntos, porque no quiero que pase una fecha tan bonita sin decirte lo mucho que significas para mí. 💖</p>
+                <p>Y por último, quisiera preguntarte algo muy importante... ¿Quieres ser mi San Valentín? 😘</p>
+                <div class="flower">
+                    <img src="https://media.giphy.com/media/l41lYVFUqWKWKRSMg/giphy.gif?cid=ecf05e47qpx42g3n880zr1r4p83jw1avtbk7gf5wi0s1xfzi&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="flower GIF" class="flower-img">
+                </div>
+                <div class="button-container">
+                    <button id="yesBtn" onclick="goToPage('page3.html')">Sí</button>
+                    <button id="noBtn" onclick="resizeYesAndMoveNo()">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="hearts.js"></script>
+
+</body>
+</html>
