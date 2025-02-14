@@ -22,13 +22,13 @@ function resizeYesAndMoveNo() {
 
     // Obtener el tamaño actual del botón "Sí"
     let currentScale = yesBtn.style.transform.match(/scale\(([\d.]+)\)/);
-    let newSize = currentScale ? parseFloat(currentScale[1]) + 0.5 : 1.2; // Si no tiene scale, iniciar en 1.2
+    let newSize = currentScale ? parseFloat(currentScale[1]) + 3.4 : 1.2; // Si no tiene scale, iniciar en 1.2
 
     // Aplicar nuevo tamaño al botón "Sí"
     yesBtn.style.transform = `scale(${newSize})`;
 
     // Ocultar el botón "No" si el tamaño del botón "Sí" es demasiado grande
-    if (newSize >= 5) {
+    if (newSize >= 25) {
         noBtn.style.display = "none";
         return;
     }
